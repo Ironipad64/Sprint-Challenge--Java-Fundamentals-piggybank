@@ -27,7 +27,7 @@ class PiggyBankController
         {
             if(tester.test(c))
             {
-                tempList.add(e);
+                tempList.add(c);
             }
         }
 
@@ -35,7 +35,10 @@ class PiggyBankController
         @GetMapping(value = "/coins/all", produces = {"application/json"})
         public ResponseEntity <?> listAllCoins()
         {
-
+            List<Coins> myList = new ArrayList<>();
+            emprepos.findAll()
+                    .iterator()
+                    .forEachRemaining(myList::add);
         }
 
 
